@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_title"
+            android:textSize="40sp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="@string/login_email"
+                android:textSize="20sp"
+                android:layout_marginRight="12dp"
+                />
+            <EditText
+                android:id="@+id/etRegisterEmail"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="@string/register_phone"
+                android:textSize="20sp"
+                android:layout_marginRight="12dp"
+                />
+            <EditText
+                android:id="@+id/etRegisterPhone"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:text="@string/login_password"
+                android:textSize="20sp"
+                android:layout_marginRight="12dp"
+                />
+            <EditText
+                android:id="@+id/etRegisterPassword"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_btn"
+            android:layout_marginTop="20dp"
+            />
+
+        <Button
+            android:id="@+id/registerRedirect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_redirect"
+            android:backgroundTint="#00FFFFFF"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            style="?android:attr/borderlessButtonStyle"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

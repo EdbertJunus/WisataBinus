@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Wisata Binus</string>
+    <!--login-->
+    <string name="login_title">LOGIN</string>
+    <string name="login_email">Email Address</string>
+    <string name="login_password">Password</string>
+    <string name="login_btn">Login</string>
+    <string name="login_redirect">Don\'t have an account? Register Now</string>
+    <string name="error_emptyForm">Email and Password must be filled</string>
+    <string name="error_wrongEmail">Wrong Email</string>
+    <string name="error_wrongPassword">Wrong Password</string>
+    <string name="success_login">Login Success</string>
+    <!--register-->
+    <string name="register_title">REGISTER</string>
+    <string name="register_phone">Phone Number</string>
+    <string name="register_btn">Register</string>
+    <string name="register_redirect">Already have an account? Login Now</string>
+    <!--error-register-->
+    <string name="error_emptyRegister">Email, Password and Phone must be filled</string>
+    <string name="error_email">Email must be a valid format</string>
+    <string name="error_email_com">Email must end with com</string>
+    <string name="error_email_notStartAt">Email must not start with @</string>
+    <string name="error_email_oneAt">Email must only contain one @</string>
+    <string name="error_email_unique">Email must be unique</string>
+    <string name="error_phone_numberDigits">Phone must be between 10 to 12 digits inclusively</string>
+    <string name="error_phone">Phone must starts with 08</string>
+    <string name="error_passwordLength">Password must be at least 8 characters</string>
+    <string name="error_password_alphaNumeric">Password must contain both letters and numbers</string>
+    <string name="success_register">Register Success</string>
+    <!--menu-->
+    <string name="favorite_menu">Favourite</string>
+    <string name="profile_menu">Profile</string>
+</resources>
