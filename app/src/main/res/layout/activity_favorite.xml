@@ -8,14 +8,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/campus_list_title"
+        android:text="@string/favorite_title"
         android:textSize="40sp"
         android:textStyle="bold"
         android:textColor="@color/black"
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCampusList"
+        android:id="@+id/rvFavoriteList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

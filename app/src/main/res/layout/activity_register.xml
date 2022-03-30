@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:text="@string/login_email"
+                android:text="@string/input_email"
                 android:textSize="20sp"
                 android:layout_marginRight="12dp"
                 />
@@ -50,7 +50,7 @@
             <TextView
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:text="@string/register_phone"
+                android:text="@string/input_phone"
                 android:textSize="20sp"
                 android:layout_marginRight="12dp"
                 />
@@ -68,7 +68,7 @@
             <TextView
                 android:layout_width="135dp"
                 android:layout_height="wrap_content"
-                android:text="@string/login_password"
+                android:text="@string/input_password"
                 android:textSize="20sp"
                 android:layout_marginRight="12dp"
                 />

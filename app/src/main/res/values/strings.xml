@@ -1,9 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Wisata Binus</string>
+    <!--input-->
+    <string name="input_email">Email Address</string>
+    <string name="input_password">Password</string>
+    <string name="input_phone">Phone Number</string>
+    <string name="input_oldPassword">Old Password</string>
+    <string name="input_newPassword">New Password</string>
     <!--login-->
     <string name="login_title">LOGIN</string>
-    <string name="login_email">Email Address</string>
-    <string name="login_password">Password</string>
     <string name="login_btn">Login</string>
     <string name="login_redirect">Don\'t have an account? Register Now</string>
     <string name="error_emptyForm">Email and Password must be filled</string>
@@ -12,7 +16,6 @@
     <string name="success_login">Login Success</string>
     <!--register-->
     <string name="register_title">REGISTER</string>
-    <string name="register_phone">Phone Number</string>
     <string name="register_btn">Register</string>
     <string name="register_redirect">Already have an account? Login Now</string>
     <!--error-register-->
@@ -30,4 +33,19 @@
     <!--menu-->
     <string name="favorite_menu">Favourite</string>
     <string name="profile_menu">Profile</string>
+    <!--profile-->
+    <string name="profile_title">Profile</string>
+    <string name="profile_accountInfo">Account Information</string>
+    <string name="profile_changePassword">Change Password</string>
+    <string name="profile_logOut">Log Out</string>
+    <string name="success_changePassword">Success Change Password</string>
+    <!--campus-detail-->
+    <string name="campus_name">[CAMPUS NAME]</string>
+    <string name="campus_location">[CAMPUS LOCATION]</string>
+    <string name="campus_address">[CAMPUS ADDRESS]</string>
+    <string name="campus_detail_favorite">Add to Favorite</string>
+    <!--campus-->
+    <string name="campus_list_title">Binus Campus List</string>
+    <!--Favorite-->
+    <string name="favorite_title">Favorite Campus</string>
 </resources>

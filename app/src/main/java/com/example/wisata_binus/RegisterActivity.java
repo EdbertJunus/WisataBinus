@@ -9,6 +9,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.wisata_binus.model.Database;
+import com.example.wisata_binus.model.User;
+
 import java.util.ArrayList;
 
 public class RegisterActivity extends AppCompatActivity {

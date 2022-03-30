@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.wisata_binus.model.Database;
+import com.example.wisata_binus.model.Favorite;
+import com.example.wisata_binus.model.User;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,7 +28,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         System.out.println("Database: " + database.getUsers());
+        System.out.println("Log In Status" + database.getLogInStatus());
         init();
+        //testing
+        System.out.println("Old Favorite List: " + userList.get(0).getFavoriteList());
+        database.addFavorites("CBN001",0);
+        database.addFavorites("CBN003",0);
+        System.out.println("Favorite List: " + userList.get(0).getFavoriteList());
+        ArrayList<Favorite> favoriteTempList = userList.get(0).getFavoriteList();
+        for (int i=0; i<favoriteTempList.size(); i++){
+            System.out.println("Favorite " + i + favoriteTempList.get(i).getCampusId());
+        }
     }
 
     private int checkEmailExist(String email){
@@ -67,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
 
                     if(index != -1){
                         if(checkPassword(index, passwordStr)){
-                            System.out.println("Password Correct");
-                            database.setLogInStatus(true);
+                            System.out.println("index" + index);
+                            database.setLogInStatus(index);
                             //Intent Go To Campus Page
                             Toast.makeText(MainActivity.this, getResources().getText(R.string.success_login), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MainActivity.this, CampusActivity.class);
@@ -90,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Go To Register Page
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });

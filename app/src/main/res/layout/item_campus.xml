@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardCampus"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardElevation="8dp"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="12dp"
+    app:cardCornerRadius="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/imageCampus"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/default_thumbnail"
+            android:layout_margin="8dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp"
+            >
+            <TextView
+                android:id="@+id/campusNameCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/campus_name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                />
+            <TextView
+                android:id="@+id/campusLocationCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/campus_location"
+                android:layout_marginTop="10dp"
+
+                />
+            <TextView
+                android:id="@+id/campusFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="[Not Favorite]"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

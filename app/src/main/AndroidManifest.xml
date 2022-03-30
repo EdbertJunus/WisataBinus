@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".RegisterActivity" android:exported="true"/>
         <activity android:name=".CampusActivity" android:exported="true" />
-
+        <activity android:name=".ProfileActivity" android:exported="true"/>
+        <activity android:name=".CampusDetailActivity" android:exported="true"/>
+        <activity android:name=".FavoriteActivity" android:exported="true"/>
     </application>
 
 </manifest>
