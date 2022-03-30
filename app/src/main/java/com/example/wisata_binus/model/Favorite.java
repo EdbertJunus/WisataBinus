@@ -12,8 +12,4 @@ public class Favorite {
     public String getCampusId() {
         return campusId;
     }
-
-    public void setCampusId(String campusId) {
-        this.campusId = campusId;
-    }
 }

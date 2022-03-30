@@ -15,10 +15,10 @@ import com.example.wisata_binus.model.User;
 import java.util.ArrayList;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText email, password, phone;
-    Button redirect, register;
+    private EditText email, password, phone;
+    private Button redirect, register;
     Database database = Database.getInstance();
-    private ArrayList<User> userList = database.getUsers();
+    private MainActivity main = new MainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -53,26 +53,47 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         }
         else{
-            int listSize = userList.size();
-            for(int i=0; i<listSize; i++){
-                if(userList.get(i).getUserEmailAddress().equals(email) ){
-                    Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_email_unique), Toast.LENGTH_SHORT).show();
-                    return false;
-                }
+            int index = main.checkEmailExist(email);
+
+            if(index != -1){
+                Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_email_unique), Toast.LENGTH_SHORT).show();
+                return false;
             }
         }
         return true;
     }
 
+    private boolean checkNumericPhone(String phone){
+        int length = phone.length();
+        int numOfDigit = 0;
+        int numOfAlpha = 0;
+        for(int i=0; i<length; i++){
+            char character = phone.charAt(i);
+            if(Character.isLetter(character)){
+                numOfAlpha++;
+            }else if(Character.isDigit(character)){
+                numOfDigit++;
+            }
+        }
+        if(numOfAlpha > 0){
+            return false;
+        }else if(numOfDigit > 0){
+            return true;
+        }
+        return false;
+    }
+
     private boolean checkPhone(String phone){
         int length = phone.length();
+
         if(length < 10 || length > 12){
-            //Show Phone Number must be between 10 and 12 digits
             Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_phone_numberDigits), Toast.LENGTH_SHORT).show();
             return false;
         }else if(!phone.startsWith("08")){
-            //Show phone must starts with 08
             Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_phone), Toast.LENGTH_SHORT).show();
+            return false;
+        }else if(!checkNumericPhone(phone)){
+            Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_phone_mustBeNumber), Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -123,7 +144,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String phoneStr = phone.getText().toString();
 
                 if(emailStr.isEmpty() || passwordStr.isEmpty() || phoneStr.isEmpty()){
-                    Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_emptyForm), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_emptyRegister), Toast.LENGTH_SHORT).show();
                     return;
                 }else{
                     //Validation
@@ -140,9 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     }
-
                 }
-
             }
         });
 

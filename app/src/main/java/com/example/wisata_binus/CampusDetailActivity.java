@@ -17,9 +17,9 @@ import java.util.ArrayList;
 
 public class CampusDetailActivity extends AppCompatActivity {
 
-    TextView campusName, campusLocation, campusAddress;
-    ImageView campusImage;
-    Button favoriteButton;
+    private TextView campusName, campusLocation, campusAddress;
+    private ImageView campusImage;
+    private Button favoriteButton;
 
     Database database = Database.getInstance();
     private ArrayList<User> userList = database.getUsers();
@@ -36,7 +36,7 @@ public class CampusDetailActivity extends AppCompatActivity {
         init();
     }
 
-    private void handleFavoriteButtonText(String campusId){
+    private void handleFavoriteButtonTextOnLoad(String campusId){
         String buttonText = favoriteButton.getText().toString();
         int favoriteIndex = database.findCampusInFavorite(favoriteList, campusId);
         if(favoriteIndex >= 0){
@@ -62,8 +62,8 @@ public class CampusDetailActivity extends AppCompatActivity {
         String campusImageStr = campusList.get(campusIndex).getCampusImage();
         int imgId = this.getResources().getIdentifier(campusImageStr, "drawable", this.getPackageName());
 
-        //Fill Data to component
-        handleFavoriteButtonText(campusIdStr);
+        //Fill Data
+        handleFavoriteButtonTextOnLoad(campusIdStr);
         campusName.setText(campusNameStr);
         campusLocation.setText(campusLocationStr);
         campusAddress.setText(campusAddressStr);
@@ -74,14 +74,17 @@ public class CampusDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String buttonText = favoriteButton.getText().toString();
                 boolean favoriteStatus = buttonText.toLowerCase().contains("add") ? true : false;
+
                 if(favoriteStatus){
                     database.addFavorites(campusIdStr, userIndex);
-                    favoriteButton.setText("Remove from favorite");
+
+                    favoriteButton.setBackgroundColor(getResources().getColor(R.color.purple_200, getTheme()));
+                    favoriteButton.setText(R.string.campus_detail_removeFavorite);
                 }else{
                     database.removeFavorites(campusIdStr, userIndex);
+                    favoriteButton.setBackgroundColor(getResources().getColor(R.color.purple_500, getTheme()));
                     favoriteButton.setText(R.string.campus_detail_favorite);
                 }
-
             }
         });
 

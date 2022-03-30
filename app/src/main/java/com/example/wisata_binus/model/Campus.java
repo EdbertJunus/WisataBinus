@@ -19,39 +19,20 @@ public class Campus{
         return CampusID;
     }
 
-    public void setCampusID(String campusID) {
-        CampusID = campusID;
-    }
-
     public String getCampusName() {
         return CampusName;
-    }
-
-    public void setCampusName(String campusName) {
-        CampusName = campusName;
     }
 
     public String getCampusLocation() {
         return CampusLocation;
     }
 
-    public void setCampusLocation(String campusLocation) {
-        CampusLocation = campusLocation;
-    }
-
     public String getCampusAddress() {
         return CampusAddress;
-    }
-
-    public void setCampusAddress(String campusAddress) {
-        CampusAddress = campusAddress;
     }
 
     public String getCampusImage() {
         return CampusImage;
     }
 
-    public void setCampusImage(String campusImage) {
-        CampusImage = campusImage;
-    }
 }

@@ -30,6 +30,7 @@
     <string name="error_passwordLength">Password must be at least 8 characters</string>
     <string name="error_password_alphaNumeric">Password must contain both letters and numbers</string>
     <string name="success_register">Register Success</string>
+    <string name="error_phone_mustBeNumber">Phone must be digits</string>
     <!--menu-->
     <string name="favorite_menu">Favourite</string>
     <string name="profile_menu">Profile</string>
@@ -38,14 +39,22 @@
     <string name="profile_accountInfo">Account Information</string>
     <string name="profile_changePassword">Change Password</string>
     <string name="profile_logOut">Log Out</string>
+    <string name="error_wrongOldPassword">Wrong Old Password</string>
     <string name="success_changePassword">Success Change Password</string>
+    <string name="error_changePasswordForm">Old and New Password must be filled</string>
     <!--campus-detail-->
     <string name="campus_name">[CAMPUS NAME]</string>
+    <string name="campus_location_title">Location</string>
     <string name="campus_location">[CAMPUS LOCATION]</string>
     <string name="campus_address">[CAMPUS ADDRESS]</string>
-    <string name="campus_detail_favorite">Add to Favorite</string>
+    <string name="campus_address_title">Address</string>
+    <string name="campus_detail_favorite">Add to favorite</string>
+    <string name="campus_detail_removeFavorite">Remove from favorite</string>
     <!--campus-->
     <string name="campus_list_title">Binus Campus List</string>
     <!--Favorite-->
     <string name="favorite_title">Favorite Campus</string>
+    <string name="empty_favorite">No Favorite Campus</string>
+    <string name="user_email_profile">[USER_EMAIL]</string>
+    <string name="user_phone_profile">[USER_PHONE]</string>
 </resources>

@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText email, password;
-    Button login, redirect;
+    private EditText email, password;
+    private Button login, redirect;
 
     Database database = Database.getInstance();
     private ArrayList<User> userList = database.getUsers();
@@ -27,32 +27,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("Database: " + database.getUsers());
-        System.out.println("Log In Status" + database.getLogInStatus());
         init();
-        //testing
-        System.out.println("Old Favorite List: " + userList.get(0).getFavoriteList());
-        database.addFavorites("CBN001",0);
-        database.addFavorites("CBN003",0);
-        System.out.println("Favorite List: " + userList.get(0).getFavoriteList());
-        ArrayList<Favorite> favoriteTempList = userList.get(0).getFavoriteList();
-        for (int i=0; i<favoriteTempList.size(); i++){
-            System.out.println("Favorite " + i + favoriteTempList.get(i).getCampusId());
-        }
+        //Add Favourites
+//        database.addFavorites("CBN001",0);
+//        database.addFavorites("CBN003",0);
     }
 
-    private int checkEmailExist(String email){
+    public int checkEmailExist(String email){
         int listSize = userList.size();
         for(int i=0; i<listSize; i++){
             if(userList.get(i).getUserEmailAddress().equals(email) ){
-                System.out.println("Email sama");
                 return i;
             }
         }
         return -1;
     }
 
-    private boolean checkPassword(Integer index, String password){
+    public boolean checkPassword(Integer index, String password){
         if(userList.get(index).getUserPassword().equals(password)){
             return true;
         }
@@ -76,13 +67,12 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, getResources().getText(R.string.error_emptyForm), Toast.LENGTH_SHORT).show();
                     return;
                 }else{
-                    Integer index = checkEmailExist(emailStr);
-                    System.out.println("index: " + index);
+                    int index = checkEmailExist(emailStr);
 
                     if(index != -1){
                         if(checkPassword(index, passwordStr)){
-                            System.out.println("index" + index);
                             database.setLogInStatus(index);
+
                             //Intent Go To Campus Page
                             Toast.makeText(MainActivity.this, getResources().getText(R.string.success_login), Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MainActivity.this, CampusActivity.class);
@@ -95,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, getResources().getText(R.string.error_wrongEmail), Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         });
 

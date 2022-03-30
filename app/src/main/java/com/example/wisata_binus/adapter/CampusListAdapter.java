@@ -44,6 +44,7 @@ public class CampusListAdapter extends RecyclerView.Adapter<CampusListAdapter.Vi
     private void handleCampusList(@NonNull ViewHolder holder, int position){
         Campus campus = campusList.get(position);
 
+        //Fill Data
         holder.campusName.setText(campus.getCampusName());
         holder.campusLocation.setText(campus.getCampusLocation());
 
@@ -56,23 +57,25 @@ public class CampusListAdapter extends RecyclerView.Adapter<CampusListAdapter.Vi
             intent.putExtra("position", position);
             ctx.startActivity(intent);
         });
-
+        String favoriteStarName;
         int favoriteIndex = database.findCampusInFavorite(favoriteList, campus.getCampusID());
-        System.out.println("Favorite: " + favoriteIndex);
         if (favoriteIndex >= 0) {
-            holder.campusFavorite.setText("FAVORITE CAMPUS");
+            favoriteStarName = "star_full";
+        }else{
+            favoriteStarName = "star_empty";
         }
+
+        int favStarId = ctx.getResources().getIdentifier(favoriteStarName, "drawable",ctx.getPackageName());
+        holder.campusFavorite.setImageResource(favStarId);
     }
 
     private void handleFavoriteList(@NonNull ViewHolder holder, int position){
         Favorite favorite = favoriteList.get(position);
-
         String campusId = favorite.getCampusId();
         int favCampusIndex = database.findCampusInCampusList(campusList, campusId);
-        System.out.println("Fav Campus Index " + favCampusIndex);
         Campus campus = campusList.get(favCampusIndex);
-        System.out.println("campus " + campus.getCampusID() );
 
+        //Fill Data
         holder.campusName.setText(campus.getCampusName());
         holder.campusLocation.setText(campus.getCampusLocation());
 
@@ -86,7 +89,9 @@ public class CampusListAdapter extends RecyclerView.Adapter<CampusListAdapter.Vi
             ctx.startActivity(intent);
         });
 
-        holder.campusFavorite.setText("FAVORITE CAMPUS");
+        String favoriteStarName = "star_full";
+        int favStarId = ctx.getResources().getIdentifier(favoriteStarName, "drawable",ctx.getPackageName());
+        holder.campusFavorite.setImageResource(favStarId);
 
     }
 
@@ -94,11 +99,9 @@ public class CampusListAdapter extends RecyclerView.Adapter<CampusListAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if(status.equals("campus_list")){
             handleCampusList(holder, position);
-        }else{
+        }else if(status.equals("favorite_list")){
             handleFavoriteList(holder, position);
         }
-
-
     }
 
     @Override
@@ -107,13 +110,12 @@ public class CampusListAdapter extends RecyclerView.Adapter<CampusListAdapter.Vi
             return campusList.size();
         }
         return favoriteList.size();
-
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         protected CardView cvCampus;
-        protected TextView campusName, campusLocation, campusFavorite;
-        protected ImageView imageCampus;
+        protected TextView campusName, campusLocation;
+        protected ImageView imageCampus, campusFavorite;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

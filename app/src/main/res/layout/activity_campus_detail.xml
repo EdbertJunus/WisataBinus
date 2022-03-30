@@ -13,6 +13,7 @@
         android:layout_alignParentTop="true"
         android:textSize="40sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         />
 
     <ImageView
@@ -28,16 +29,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/campusDetailImage">
+        android:layout_below="@+id/campusDetailImage"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/campus_location_title"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
 
         <TextView
             android:id="@+id/campusDetailLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/campus_location"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
             />
     </LinearLayout>
 
@@ -46,16 +56,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/campusLocationGroup">
+        android:layout_below="@+id/campusLocationGroup"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/campus_address_title"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
 
         <TextView
             android:id="@+id/campusDetailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/campus_address"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
             />
     </LinearLayout>
 

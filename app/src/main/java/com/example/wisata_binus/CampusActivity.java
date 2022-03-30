@@ -31,11 +31,12 @@ public class CampusActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_campus);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         init();
-//        ArrayList<Favorite> favoriteTempList = userList.get(0).getFavoriteList();
-//        for (int i=0; i<favoriteTempList.size(); i++){
-//            System.out.println("Favorite " + i + favoriteTempList.get(i).getCampusId());
-//        }
     }
 
     @Override

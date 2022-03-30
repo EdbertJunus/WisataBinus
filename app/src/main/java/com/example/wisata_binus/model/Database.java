@@ -23,12 +23,24 @@ public class Database {
         users.add(dummyUser1);
         users.add(dummyUser2);
 
+        //Add dataCampus
         Campus dataCampus1 = new Campus("CBN001","Binus Anggrek","Jakarta","Jalan Budi Raya","binus_anggrek");
         Campus dataCampus2 = new Campus("CBN002","Binus Syahdan","Jakarta","Jalan Syahdan","binus_syahdan");
         Campus dataCampus3 = new Campus("CBN003","Binus Kijang","Jakarta","Jalan Kijang","binus_kijang");
+        Campus dataCampus4 = new Campus("CBN004", "Binus Alam Sutera", "Tangerang", "Jalan Jalur Sutera Barat Panunggangan Timur", "binus_alam_sutera");
+        Campus dataCampus5 = new Campus("CBN005", "Binus Bekasi", "Bekasi", "Jalan Lingkar Boulevar", "binus_bekasi");
+        Campus dataCampus6 = new Campus("CBN006", "Binus JWC", "Jakarta Pusat", "Jalan Hang Lekir I", "binus_jwc");
+        Campus dataCampus7 = new Campus("CBN007", "Binus Bandung", "Bandung", "Paskal Hyper Square, Jalan Pasir Kaliki", "binus_bandung");
+        Campus dataCampus8 = new Campus("CBN008", "Binus Malang", "Malang", "Araya Mansion No. 8 - 22, Genitri", "binus_malang");
+
         campuses.add(dataCampus1);
         campuses.add(dataCampus2);
         campuses.add(dataCampus3);
+        campuses.add(dataCampus4);
+        campuses.add(dataCampus5);
+        campuses.add(dataCampus6);
+        campuses.add(dataCampus7);
+        campuses.add(dataCampus8);
 
     }
 
