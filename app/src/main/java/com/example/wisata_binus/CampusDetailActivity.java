@@ -41,6 +41,7 @@ public class CampusDetailActivity extends AppCompatActivity {
         int favoriteIndex = database.findCampusInFavorite(favoriteList, campusId);
         if(favoriteIndex >= 0){
             favoriteButton.setText("Remove from favorite");
+            favoriteButton.setBackgroundColor(getResources().getColor(R.color.purple_200, getTheme()));
         }else{
             favoriteButton.setText(R.string.campus_detail_favorite);
         }

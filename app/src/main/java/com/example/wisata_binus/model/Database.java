@@ -18,8 +18,8 @@ public class Database {
 
     public Database() {
         //Add dummyUser
-        User dummyUser1 = new User("BNS001", "edbertGanteng88@gmail.com","081260258388","makanEnak88");
-        User dummyUser2 = new User("BNS002", "edbertyoung88@gmail.com","087775568201","minumEnak88");
+        User dummyUser1 = new User("BNS001", "edbert@gmail.com","081262153587","makanEnak88");
+        User dummyUser2 = new User("BNS002", "edbertjunus@gmail.com","08126215385","minumEnak88");
         users.add(dummyUser1);
         users.add(dummyUser2);
 

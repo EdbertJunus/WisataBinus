@@ -38,6 +38,18 @@ public class RegisterActivity extends AppCompatActivity {
         return count;
     }
 
+    private boolean checkEmailStructure(String email){
+        int length = email.length();
+        for(int i=0; i<length; i++){
+            if(email.charAt(i) == '@'){
+                if(email.charAt(i+1) == '.'){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     private boolean checkEmailValid(String email){
         if(!email.endsWith(".com")){
             Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_email_com), Toast.LENGTH_SHORT).show();
@@ -49,6 +61,9 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_email_oneAt), Toast.LENGTH_SHORT).show();
             return false;
         }else if(checkEmailContainsAt(email) < 1){
+            Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_email), Toast.LENGTH_SHORT).show();
+            return false;
+        }else if(!checkEmailStructure(email)){
             Toast.makeText(RegisterActivity.this, getResources().getText(R.string.error_email), Toast.LENGTH_SHORT).show();
             return false;
         }
